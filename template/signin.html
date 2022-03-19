@@ -1,0 +1,60 @@
+{%extends 'base.html'%}
+
+
+
+
+{%block body%}
+{% if messages %}
+ <ul>
+ {% for message in messages %}
+ <li>{{message}}</li>
+ {% endfor %}
+ </ul>
+ {% endif %}
+
+<div class="container6">
+    <form class="form2" action="/signin" method="post">{% csrf_token %}
+        <div class="table">
+        <label >Username:</label><br>
+        <input  class="int" name="uname" type="U_name" placeholder="Userrname1234"  requiredname="" >
+        </div>
+
+        <div class="table">
+        <label >Email:</label><br>
+        <input  class="int" name="email" type="email" placeholder="Example@gmail.com"  requiredname="" >
+        </div>
+        
+
+        <div class="table">
+        <label >First Name:</label><br>
+        <input  class="int" name="Fname" type="F_name" placeholder="xyz"  requiredname="" >
+        </div>
+
+        <div class="table">
+        <label >Last Name:</label><br>
+        <input  class="int"name="Lname"  type="L_name" placeholder="xyz"  requiredname="" >
+        </div>
+        
+
+        <div class="table">
+        <label >Phone Number:</label><br>
+        <input class="int"  name="phone" type="phone" placeholder="555-444-6664"  requiredname="" >
+        </div>
+
+        <div class="table">
+        <label >Password:</label><br>
+        <input  class="int" name="password1" type="password1" placeholder="***********" requiredname="" >
+        </div>
+
+        <div class="table">
+        <label >Password:</label><br>
+        <input  class="int" name="password2" type="password2" placeholder="Confirm Password"  requiredname="" >
+        </div>
+
+        <div class="table">
+       
+        <button class="btn"> Submit </button>
+        </div>
+    </form>
+</div>
+{%endblock%}

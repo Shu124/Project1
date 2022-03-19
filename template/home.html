@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{%block title%}home{%endblock%}
+{%load static%}
+
+
+
+
+
+{%block body%}
+
+
+<!-- Slideshow container -->
+<div class="mk">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlide ">
+    <img class="IMG" src="{% static 'IMG/1.jpg' %}" >
+    
+    
+
+  </div>
+
+  <div class="mySlide">
+
+    <img  class="IMG" src="{% static 'IMG/2.jpg' %}" >
+    
+  </div>
+
+  <div class="mySlide ">
+
+    <img class="IMG"  src="{% static 'IMG/3.jpg' %}"">
+    
+
+  </div>
+  <div class="mySlide ">
+
+    <img class="IMG" src="{% static 'IMG/4.jpg' %}" >
+    
+
+  </div>
+  <div class="mySlide ">
+
+    <img class="IMG" src="{% static 'IMG/5.jpg' %}" >
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+ 
+
+
+  
+  
+
+  
+  
+ 
+ 
+
+    <div class="container" id="cont4">
+      <div class="heading">
+        <h2>Buy Your Product Here..</h2>
+      
+  <div class="container5">
+
+    {% for product,range,nslide in allProds %}
+    
+
+   
+   
+  
+   
+   
+    <div class="slideshow-container">
+      <br>
+      <h5 class="my-4">Flash Sale On <b>{{product.0.catagory}}</b> - Recommended Items</h5>
+      <br>
+
+      <!-- Full-width images with number and caption text -->
+      {%for i in product%}
+  
+  <div class="mySlides fade">
+  
+    <img src="{{i.image}}" style="width:100%">
+    
+    <div class="numbertext">{{i.prod_name}}</div>
+    <div class="numbertext">Price: <b>{{i.price}} Rs</b></div>
+    <div class="text">{{i.prod_id}}</div>
+    <div class="text">{{i.desc|slice:"0:12"}}</div>
+    <a class="a" href="#">See More....</a>
+    </div>
+    {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last%}
+   
+  </div><div class="slideshow-container">
+    
+    {%endif%}
+    {%endfor%}
+  </div>
+
+
+{% endfor %}
+
+      
+      <!-- Next and previous buttons -->
+      <a href="#demo{{forloop.counter}}" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a href="#demo{{forloop.counter}}" class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      {% for i in range %}
+      <span class="dot" onclick="currentSlide({{i}})"></span>
+      {%endfor%}
+      
+    </div>
+  </div>
+  
+</div>   
+
+<!--javascript-->
+{% block js%}
+<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    
+    var slides = document.getElementsByClassName("myslide");
+    
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 se
+    
+
+
+  }
+
+  
+</script>
+
+{%endblock%}
+
+{%endblock%}

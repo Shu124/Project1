@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Result {% endblock title %}
+
+
+
+{% block body %}
+<div class="container">
+    <h2> Search Result by iCoder:</h2>
+    {% if allprods|length < 1 %}
+    <p>Search not found</p>
+    Your search query:  <b><i>{{query}}</i> </b> --did not match any documents.<br>
+    Suggestions:
+    <ul>
+       <li>Make sure that all words are spelled correctly.</li>
+       <li>Try different keywords.</li>
+       <li>Try more general keywords.</li>
+       </ul>
+    {% endif %}
+    {% for i in allprods %}
+  
+    <div class="mySlides fade">
+  
+        <img src="{{i.image}}" style="width:100%">
+        
+        <div class="numbertext">{{i.prod_name}}</div>
+        <div class="numbertext">Price: <b>{{i.price}} Rs</b></div>
+        <div class="text">{{i.desc|slice:"0:12"}}</div>
+        <a class="a" href="#">See More....</a>
+        </div>
+        
+    {% endfor %}
+</div>
+ {% endblock %}

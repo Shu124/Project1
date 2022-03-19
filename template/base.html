@@ -1,0 +1,739 @@
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+   
+    
+    <title>{%block title%}Home{%endblock%}</title>
+   
+    <style>
+    *
+    {
+      margin:0%;
+      padding:0;
+    }
+
+    /* Slideshow container */
+   
+
+/* Hide the images by default */
+
+
+/* Next & previous buttons */
+.prev {
+  cursor: pointer;
+  position:absolute;
+  top:50%;
+  left:1%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  cursor: pointer;
+  position:absolute;
+  top:50%;
+  right:1%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.container
+{
+  margin-bottom:10px;
+  position: absolute;
+  top:50%;
+  left:0%;
+  right:0%;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(17, 14, 14);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+ .dot:hover {
+  background-color: #717171;
+}
+.active{
+  margin:10px;
+  background-color:rgb(20, 2, 43) ;
+  
+  color: aliceblue;
+}
+
+
+
+/* Fading animation */
+.fade {
+  
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+    
+    .IMG
+    {
+      display: block;
+      margin-left: auto;
+      margin-right:auto;
+      width: 100%;
+    }
+    .myslide h2
+    {
+      color:rgb(230, 211, 211);
+    }
+        
+      .container1
+      {
+          display:flex;
+          height:7.5%;
+          
+          background-color: rgb(20, 2, 43);
+          margin:0%;
+          
+          
+      }  
+      .container1 nav
+      {
+        display:flex;
+        flex:25%;
+        
+       
+      }
+     
+      .m2
+      {
+          margin-left:auto;
+          margin-right:auto;
+
+          color: white;
+          
+      }
+      
+      .heading
+      {
+        margin-right:3%;
+      }
+
+      .active
+      {
+        
+        color: white;
+      } 
+       .active :hover
+       {
+           cursor:pointer;
+           transition: 0.2s;
+
+       }
+       .logo {
+          
+           width:9%;
+           margin:5px;
+           height: 40px;
+       }
+       .search
+       {
+           width:400px;
+           margin-top:5px;
+           margin-bottom: 5px;
+           height: 40px;
+           border-top-left-radius:10px;
+           border-bottom-left-radius:10px;
+           
+       }
+       .sbutton
+       {
+        margin-top:5px;
+        margin-bottom: 5px;
+        background-color: rgb(248, 122, 99);
+       
+        
+        height: 40px;
+        border-top-right-radius:10px;
+           border-bottom-right-radius:10px;
+       }
+       .sbutton:hover
+       {
+         cursor:pointer;
+         background-color: rgb(235, 93, 68);
+         transition: 0.2s;
+       }
+       .active1
+       {
+           
+        display:flex;
+        height:40px;
+        background-color: rgba(30, 26, 53, 0.877);
+       }
+       .m33
+       {
+        margin:auto;
+        background-color: rgba(30, 26, 53, 0.877)
+           
+       }
+       .m33:hover
+       {
+        cursor:pointer;
+        
+        border-color: white;
+        transition: 0.2s;
+       }
+       .m34
+       {
+           color: white;
+       }
+
+      
+      .row
+      {
+        display:flex;
+        
+       
+      }
+      
+      .myslides
+      { 
+        
+       
+        float: left;
+        
+        width:15%;
+        height:fit-content ;
+        box-shadow: 0px 10px 10px 5px black;
+        background-color: rgb(255, 242, 242);
+        border-radius: 2%;
+        margin:3%;
+       
+        
+      }
+      
+     
+     .myslides:hover
+      { 
+       
+       cursor: pointer;
+       transition:0.2s;
+       
+        box-shadow: 5px 10px 10px 10px black;
+        background-color: rgb(209, 196, 196);
+       
+      }
+     .myslides img
+      {
+        border-radius: 2%;
+        height:255px;
+        
+      }
+     
+      
+    
+     
+      .myslides .text
+      {
+        margin:3%;
+        text-transform: inherit;  
+      }
+     .myslides .numbertext
+      {
+        text-align: center;
+        justify-content: center;
+        margin:3%;
+        font-size:100%;
+      }
+      .myslides .numbertext:hover
+      {
+        cursor: pointer;
+        transition: 0.2s;
+        color: red;
+      }
+      .myslides .a
+      {
+        margin:3%;
+        color:black;
+        text-align:bottom;
+      }
+      .myslides .a:hover
+      {
+        
+        color:rgb(90, 90, 240);
+      }
+      body
+      {
+        background-color: rgba(229, 226, 238, 0.877);
+      }
+      
+      .burger
+      {
+        margin:3px;
+        opacity: 0;
+
+      }
+      .burger .line
+      {
+       background-color: rgb(245, 227, 227);
+       width: 25px;
+       height:3px;
+       margin: 3px;
+
+      }
+
+
+
+
+
+
+
+
+
+
+      /* css  for signin page */ 
+.container6
+{
+ margin:20px;
+ padding: 30px;
+ text-align: center; 
+}
+.container6 .form2
+{
+  
+  display: inline-block;
+  width:50%;
+  box-shadow: 5px 0px 0px 5px blueviolet ;
+  border-radius: 10px;
+  padding:10px;
+  
+}
+.container6 .form2 .table
+{
+  margin:2px;
+  
+}
+.container6 .form2 .table .int 
+{
+  width: 50%;
+  border-radius: 5px;
+  height:30px;
+}
+.container6 .form2 .table label
+{
+  color: rgb(19, 77, 116);
+  
+  
+}
+.container6 .form2 .table .btn 
+{
+  margin:10px;
+  width:20%;
+  background-color: rgb(34, 104, 151);
+  color: aliceblue;
+  border-radius: 5px;
+  height:30px;
+}
+.container6 .form2 .table .btn:hover
+{
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: rgb(26, 86, 126);
+} 
+
+
+
+
+
+
+
+/* media qeary for Home page and base page*/
+      @media screen and (max-width:1063px)
+      { 
+       
+        .active1
+        {
+          display: none;
+          transition: 0.2s;
+        }
+        .search
+        {
+          width: auto;
+        }
+        
+          
+       
+       
+      
+      .sbutton
+        {
+          width: auto;
+          
+       
+       
+      }
+       
+    }
+      @media screen and (max-width:820px)
+      {
+       
+      nav
+      { 
+        margin-top: 40px;
+        background-color: rgb(20, 2, 43);
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left:1%;
+        right:1%;
+       
+        
+        
+        align-items: center;
+        justify-content: center;
+      
+      }
+      
+     
+      .m2
+      {
+        margin:5%;
+        position: relative;
+        
+        display: none;
+        
+      }
+      .container1 .container
+      {
+        display: none;
+      }
+      
+      .search
+      {
+        width: 75%;
+        height: 60%;
+        border-radius: 3px;
+        
+      }
+      .sbutton
+      {
+        width: 20%;
+        border-radius: 3px;
+        height: 60%;
+      }
+      .nav-active
+      {
+        align-items: center;
+        justify-content: center;
+        
+        
+        
+        
+        margin-top: 40px;
+        display:flex;
+        flex-direction: column;
+       
+        background-color: rgb(20, 2, 43);
+       
+      }
+      
+
+      .IMG
+    {
+      display: block;
+      margin-left: auto;
+      margin-right:auto;
+      width:120%;
+     
+    }
+    .m
+    {
+     opacity: 0;
+     
+     
+    }
+    .m44
+    {
+      margin-right: 40%;
+      margin-left: 10%;
+
+    }
+        
+    .burger
+    {
+          opacity: 100%;
+          align-items: flex-end;
+          justify-content: flex-end;
+         
+          
+        
+      
+        }
+      .myslides
+      {
+        width:20%;
+        transition: 0.2s;
+        white-space: normal;
+      }
+      .logo
+      {
+        align-items: flex-start;
+        width: 20%;
+      }
+      .container
+        {
+          position: absolute;
+          top:40%;
+          transition: 0.2s;
+        }
+      }
+      @media screen and (max-width:300px) 
+      {
+        .container
+        {
+          position: absolute;
+          top:30%;
+        }
+        
+        
+        .myslides
+        {
+          width:40%;
+          margin:3%;
+
+          height:255px;
+        }
+        .myslides img 
+        {
+          height: 125px;
+        }
+      }
+
+
+     
+     
+    </style>
+   
+    
+</head>
+
+<body>
+{%load static%}
+    <div class="container1">
+    
+       <img class="logo" src="{%static 'IMG/amazon_PNG25.png'%}"  >
+        <div class="m44">
+        <div class="m2">
+        <div class="nav-sprite nav-progressive-attribute" id="nav-packard-glow-loc-icon"></div>
+        <span class="m" id="glow-ingress-line1">
+                   Hello
+                </span>
+                <br>
+                <span class="m" id="glow-ingress-line2">
+                Select your address
+             </span>        
+
+        </div>
+</div>
+        <nav class="navbar">
+        <div class="m2">
+            <form action="\search" method='get'>
+                <input  name="query" id="query" class="search" type="search">
+                <button  class="sbutton " value="submit">Search</button>
+            </form>
+        </div>
+        {% if user.is_authenticated %} 
+        <h1>hii</h1>
+
+        {%endif%} 
+        {% if not  user.is_authenticated %} 
+        
+        <div class="m2">
+        
+        <form action='/login' method="get">
+        <button class="active link" type="submit">Login</button>
+      </form>
+       
+         </div>
+
+
+          <div class="m2">
+          
+          <form action='/signin' method="get">
+          <button class="active link" type="submit">signup</button>
+        </form>
+       
+          </div>
+         
+          {%endif%} 
+          
+         <div class="m2">
+                <a class="active link" href="#"><br>Returns & Orders</a>
+            </div>
+        
+           
+            <div class="m2">
+              <a class="active link" href="#">Cart</a>
+            </div>
+            </nav>
+              
+             
+            
+                 
+
+              <div class="burger" >
+                <div class="line 1"></div>
+                <div class="line 2"></div>
+                <div class="line 3"></div>
+               
+             
+            </div>
+            </div>
+    <div class="active1">
+        
+            
+              <button class="m33"><a class="m34"  href="#">mobile </a></button>
+          
+         
+              <button class="m33"><a class="m34"  href="#">Best Seller </a></button>
+         
+         
+              <button class="m33"><a class="m34"  href="#">Electronics </a></button>
+            
+         
+              <button class="m33"><a class="m34"  href="#">Customer Servive </a></button>
+          
+        
+              <button class="m33"><a class="m34"  href="#">Fasion </a></button>
+        
+               <button class="m33"><a class="m34"  href="#">prime </a></button>
+            
+        
+             <button class="m33"><a class="m34"  href="#">Home&Kitchen</a></button>
+           
+            
+                <button class="m33"> <a class="m34"  href="#">Todays Sale</a></button>
+                <button class="m33"><a  class="m34" href="#">Amazon Pay</a></button>
+                <button class="m33"><a  class="m34" href="#">Computers</a></button>
+                <button class="m33"><a  class="m34" href="#">Books</a></button>
+          
+               
+                <a class="m31" href="#">
+                <img alt="" src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/chhori/launch/400x39-SWM_JPN._CB653075835_.jpg">
+              </a>
+            </div>
+
+            
+           
+    {%block css%}{%endblock%}
+    {%block body%}{%endblock%}
+  
+    <script>
+      console.log("hello")
+   
+    function classtoggle(){
+      const navs=document.querySelectorAll(".m2");
+     
+     
+     
+      navs.forEach((nav) => nav.classList.toggle("nav-active"));
+     
+     
+     
+     
+      
+     
+      
+      
+
+     
+      
+    }
+
+   
+    
+   
+   
+    var bg=document.querySelector(".burger");
+    
+    bg.addEventListener('click',classtoggle);
+   
+    
+    
+    
+     
+    var slideIndex = 1;
+    showS(slideIndex);
+    
+    // Next/previous controls
+    function plusSlides(n) {
+      showS(slideIndex += n);
+    }
+    
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showS(slideIndex = n);
+    }
+    
+    function showS(n) {
+      var i;
+      var slides = document.getElementsByClassName("slideshow-container");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+ 
+</body>
+
+
+</html>

@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+
+
+
+
+{%block body%}
+{% if messages %}
+ <ul>
+ {% for i in messages %}
+ <li>{{i}}</li>
+ {% endfor %}
+ </ul>
+ {% endif %}
+
+<div class="container6">
+    <form class="form2" action="/login" method="post">{% csrf_token %}
+        <div class="table">
+        <label >Username:</label><br>
+        <input  class="int" name="Uname" type="U_name" placeholder="Userrname1234"  requiredname="" >
+        </div>
+
+        
+        
+
+     
+
+        
+        
+
+        
+
+        <div class="table">
+        <label >Password:</label><br>
+        <input  class="int" name="password5" type="password1" placeholder="***********" requiredname="" >
+        </div>
+
+
+
+        <div class="table">
+       
+        <button class="btn"> Submit </button>
+        </div>
+    </form>
+</div>
+{%endblock%}
